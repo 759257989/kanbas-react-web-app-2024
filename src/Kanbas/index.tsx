@@ -5,7 +5,7 @@ import Courses from "./Courses";
 export default function Kanbas() {
   return (
     <div id="wd-kanbas">
-      <table>
+      <table border={1} width = "100%">
         <tr>
           <td valign="top">
             <KanbasNavigation />
