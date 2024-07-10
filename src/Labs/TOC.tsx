@@ -1,12 +1,19 @@
-export default function TOC() {
-    return (
-      <ul>
-        <li><a id="wd-a"  href="#/Labs">Labs</a></li>
-        <li><a id="wd-a1" href="#/Labs/Lab1">Lab 1</a></li>
-        <li><a id="wd-a2" href="#/Labs/Lab2">Lab 2</a></li>
-        <li><a id="wd-a3" href="#/Labs/Lab3">Lab 3</a></li>
-        <li><a id="wd-k"  href="#/Kanbas">Kanbas</a></li>
-      </ul>
-    );
-  }
-  
+import Lab1 from "./Lab1";
+import { Route, Routes, Navigate } from "react-router";
+import TOC from "./TOC";
+import Lab2 from "./Lab2";
+import Lab3 from "./Lab3";
+export default function Labs() {
+  return (
+    <div>
+      <h1>Labs</h1>
+      <TOC />
+      <Routes>
+        <Route path="/" element={<Navigate to="Lab1" />} />
+        <Route path="Lab1" element={<Lab1 />} />
+        <Route path="Lab2" element={<Lab2 />} />
+        <Route path="Lab3" element={<Lab3 />} />
+      </Routes>
+    </div>
+  );
+}
